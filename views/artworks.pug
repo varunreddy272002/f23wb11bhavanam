@@ -11,3 +11,15 @@ block content
           p Title: #{result.ArtworkTitle}
           p Name: #{result.ArtistName}
           p cost: $#{result.Cost}
+          br
+  h5= 'Buy'
+
+  div(class="container-fluid")
+    each result, index in results
+      div(class="row", onclick=`buy(${index})`)
+        div(class="col-sm-2") <br>result #{index}: #{result.ArtworkTitle} ArtistName:#{result.ArtistName} Cost:#{result.Cost}
+  script.
+    function buy(price){
+      alert('You purchased item ' + price)
+    }
+          
